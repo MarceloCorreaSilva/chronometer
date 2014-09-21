@@ -13,6 +13,7 @@
 			<li id="hourWithPluginJQuery"></li>
 			<li id="dayWithChronometer"></li>
 			<li id="dayWithPluginJQuery"></li>
+			<li id="regressiveWithChronometer"></li>
 		</ul>
 
 		<script type="text/javascript" src="webfiles/js/jquery.min.js"></script>
@@ -22,7 +23,8 @@
 			var app = {
 				initialize: function() {
 					this.loadAll();
-					setTimeout('app.initialize()', 1000);
+					$('#regressiveWithChronometer').html( Chronometer.regressive( new Date( 2014, 9, 21, 14, 27, 0, 0 ) ) );
+					setTimeout('app.initialize()', 1);
 				}, 
 				loadAll: function() {
 					// Chronometer
