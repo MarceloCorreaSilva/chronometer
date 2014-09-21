@@ -7,12 +7,40 @@
 	<body>
 
 		<h1>Hello World</h1>
-		<p id="aqui"></p>
+		<ul>
+			<li id="hourWithChronometer"></li>
+			<li id="hourWithPluginJQuery"></li>
+			<li id="dayWithChronometer"></li>
+			<li id="dayWithPluginJQuery"></li>
+		</ul>
 
 		<script type="text/javascript" src="webfiles/js/jquery.min.js"></script>
 		<script type="text/javascript" src="webfiles/js/chronometer.js"></script>
 		<script type="text/javascript">
-			$('#aqui').html('Hora: ' + Chronometer.day());
+
+			var app = {
+				initialize: function() {
+					this.loadAll();
+					setTimeout('app.initialize()', 1000);
+				}, 
+				loadAll: function() {
+					// Chronometer
+					$("#hourWithChronometer").html(Chronometer.getCurrentTime());
+
+					// Plugin JQuery com Chronometer
+					$('#hourWithPluginJQuery').displayCurrentTime();
+
+					// Chronometer
+					$("#dayWithChronometer").html(Chronometer.getCurrentDay());
+
+					// Plugin JQuery com Chronometer
+					$('#dayWithPluginJQuery').displayCurrentDay();
+				}
+			}
+
+			app.initialize();
+
 		</script>
+
 	</body>
 </html>
