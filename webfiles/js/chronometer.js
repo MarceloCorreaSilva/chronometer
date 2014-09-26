@@ -70,14 +70,14 @@ var Chronometer = {
 				amountOfMiliseconds = amountOfMiliseconds % 1000;
 
 				days 		= formatTwoDecimalPlaces( days );
-				hours 	= formatTwoDecimalPlaces( hours );
+				hours 		= formatTwoDecimalPlaces( hours );
 				minutes 	= formatTwoDecimalPlaces( minutes );
 				seconds 	= formatTwoDecimalPlaces( seconds ); 
 
 			} else {
 
 				days 		= '00';
-				hours 	= '00';
+				hours 		= '00';
 				minutes 	= '00';
 				seconds 	= '00';
 				amountOfMiliseconds = '00';
@@ -126,16 +126,16 @@ function formatTwoDecimalPlaces(val) {
  * @returns {Number}
  */
 function currentDateInMilliseconds() {
-	var currentTime = new Date();
-	actualYear = currentTime.getFullYear();
-	actualMonth = currentTime.getMonth() + 1;
-	actualDay = currentTime.getDate();
-	actualHours = currentTime.getHours();
-	actualMinutes = currentTime.getMinutes();
-	actualSeconds = currentTime.getSeconds();
-	actualMileseconds = currentTime.getMilliseconds();
+	var currentTime 	= new Date();
+	actualYear 			= currentTime.getFullYear();
+	actualMonth 		= currentTime.getMonth() + 1;
+	actualDay 			= currentTime.getDate();
+	actualHours 		= currentTime.getHours();
+	actualMinutes 		= currentTime.getMinutes();
+	actualSeconds 		= currentTime.getSeconds();
+	actualMilliseconds 	= currentTime.getMilliseconds();
 		
-	var currentDay = new Date(actualYear, actualMonth, actualDay, actualHours, actualMinutes, actualSeconds, actualMileseconds);
+	var currentDay = new Date(actualYear, actualMonth, actualDay, actualHours, actualMinutes, actualSeconds, actualMilliseconds);
 
 	return currentDay.getTime();
 }
